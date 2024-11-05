@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* 선택자 우선순위
+        
+        전체<type<가상=클래스<id<inline<!important
+
+        0 전체 선택자
+        1 type 선택자
+        10 가상 선택자, 클래스 선택자
+        100 id 선택자
+        1000 인라인 스타일
+        !important 최고높음
+        
+        
+        
+        */
+        * {
+            color: red;
+            text-decoration: underline;
+        }
+        #txt {color: blue;}
+        .atxt {color : magenta;}
+        .btxt {color : brown;}
+        .ctxt {color: blueviolet;}
+    </style>
+</head>
+<body>
+    <h2>제목</h2>
+    <p>우리를 기쁘게 하는 것들</p>
+    <p id="ctxt" class="ctxt">건강에 좋은 차</p>
+    <p id="txt">머리가 좋아지는 음식</p>
+    <p class="atxt btxt">안녕하세요</p>
+    <p class="atxt">반갑습니다</p>
+    <p class="ctxt">또오세요</p>
+</body>
+</html>

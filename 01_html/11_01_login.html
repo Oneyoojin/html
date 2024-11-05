@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        input {padding: .5em;}
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <!-- 
+    <form> : 입력한 값들을 처리하는 프로그램으로 전송할 때 사용.
+    <fieldset> : 양식 요소들을 그룹화할 때 사용. <legend>를 자식 요소로 포함
+        일반적으로 fieldset이 form 안에 포함됨
+    
+    <form>의 속성
+    action : 작성한 값을 처리하는 프로그램의 주소 지정(URL)
+    method : 서버 프로그램에 어떤 방식으로 전달할 지 정의
+        전달 방식
+        - get : 조회(기본)
+        - post : 전송(특수목적용)
+        - put : 수정
+        - delete : 삭제
+    -->
+        <fieldset>
+            <legend>로그인</legend>
+            <p>ID : <input type="text" name="uid" id="uid"></p>
+            <p>PW : <input type="password" name="upw" id="upw"></p>
+            <button type="submit">로그인</button>
+        </fieldset>
+    </form>
+    <form>
+        <table>
+            <tr>
+                <th><label for="id">아이디</label></th>
+                <td><input type="text" name="id" id="id" tabindex="1"></td>
+                <!-- tabindex는 음수가 오는게 좋음 -->
+                <td rowspan="2"><button tabindex="3">로그인</button></td>
+            </tr>
+            <tr>
+                <td><label for="pw">비밀번호</label></td>
+                <td><input type="password" name="pw" id="pw" tabindex="2"></td>
+            </tr>
+        </table>
+    </form>
+    <form>
+    <!-- <form novalidate> : 여기서 제공하는 유효성을 사용하지 않고 내가 만들겠다. 혹은 검사하지않겠다. (boolean 속성임) -->
+        <fieldset>
+            <legend>type 속성</legend>
+            <!-- 
+            <input> : 사용자로부터 데이터값을 입력받기 위함
+            <label> : 사용자 경험 개선
+            
+            <input>의 속성
+            type : text, password, search, email, url, tel, number, range, time, date, datetime-local, month, week, color
+                   radio, checkbox,  submit, reset, button, image, file, hidden 등등 다양한 폼 컨트롤 생성
+            name : input 요소의 이름 지정. 폼이 서버로 전송되는 데이터에서 해당 입력 필드를 식별하는데 사용
+                   영문자, 숫자, 밑줄(_) 등이 권장
+            value : input 요소의 초기 값이나 버튼의 텍스트 설정
+                    다양한 특수문자나 한글 사용가능
+            id : html 내에서 고유하게 식별하는데 사용
+            title : 요소에 대한 추가정보 제공(툴팁)
+            placeholder : 사용자가 입력해야할 예시나 힌트 제공
+            required : 반드시 값을 입력받아야 함
+            autocomplete : 기본값 on (off 시 자동완성 안됨)
+            maxlength : 최대 문자수
+            max / min : 최대 최소값
+            step : 값의 단위
+            
+            -->
+            <p><label>아이디 <input type="text" name="id" placeholder="ID를 입력하세요" maxlength="12" required autocomplete="off"></label></p>
+            <p>비밀번호 <input type="password" name="pw" required></p>
+            <p>검색 <input type="search" name="search" value="검색어"></p>
+            <p>이메일 <input type="email" name="email" ></p>
+            <p>url <input type="url" name="url"></p>
+            <p>전화번호 <input type="tel" name="tel"></p>
+            <p>숫자 <input type="number" name="number" min="1" max="10" step="2"></p>
+            <hr>
+            <p>범위 <input type="range" name="range" min="2" max="6" step="2" value="2"></p>
+            <p>시간 <input type="time" name="time"></p>
+            <!-- date picker -->
+            <p>날짜 <input type="date" name="date"></p>
+            <p>날짜시간 <input type="datetime-local" name="datetime-local"></p>
+            <p>월 <input type="month" name="month" min="2024-10" max="2025-09"></p>
+            <p>주 <input type="week" name="week"></p>
+            <!-- color picker -->
+            <p>색상 <input type="color" name="color"></p>
+
+            <button>전송</button>
+        </fieldset>
+    </form>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>회원가입</legend>
+            <p>가입목적 : <br><textarea cols="50" rows="10"></textarea></p>
+            <p>전화번호 :
+            <select>
+                <option>지역번호</option>
+                <option selected>02</option>
+                <option>053</option>
+                <option>062</option>
+            </select>
+            <input type="text">
+        </fieldset>   
+    </form>
+</body>
+</html>
